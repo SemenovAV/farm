@@ -1,16 +1,19 @@
 class Animals:
-    def __init__(self, name, lexicon):
+    def __init__(self, name, lexicon, weight):
         self.name = name
         self.lexicon = lexicon
-        self.satiety = 0
+        self.saturation = 0
+        self.weight = weight
+        self.capacity = round(weight / 22, 2)
 
     def eat(self, food):
-        if self.satiety < 100:
-            self.satiety += food
-        elif self.satiety + food > 100:
-            self.satiety += food - (self.satiety + food - 100)
-            return f'{self.lexicon}-' * 2 + self.lexicon
-        return self.satiety
+        self.weight += food / 100
+        if self.saturation + food >= self.capacity:
+            surplus = food - (self.capacity - self.saturation)
+            self.saturation += (food - surplus)
+            return surplus
+        self.saturation += food
+        return f'{self.lexicon}-' * 2 + self.lexicon
 
     def say(self):
         return self.lexicon
