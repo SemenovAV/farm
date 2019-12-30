@@ -14,5 +14,6 @@ class Dairy(Animals):
         return milk
 
     def eat(self, food):
-        self.milk = self.saturation / 2
-        return super().eat(food)
+        result = super().eat(food)
+        self.milk += self.saturation / 2
+        return result
