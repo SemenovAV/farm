@@ -1,8 +1,8 @@
 from animals.cow import Cow
-from animals.sheep import Sheep
+from animals.goats import Goats
 
-my_barashek = Sheep('Барашек', 100)
-my_kudryavyj = Sheep('Кудрявый', 80)
+my_roga = Goats('Рога', 100)
+my_kopyta = Goats('Копыта', 80)
 my_manika = Cow('Манька', 400)
 print(my_manika.say())
 print(my_manika.weight)
