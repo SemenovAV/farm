@@ -1,13 +1,16 @@
 from animals.cow import Cow
+from animals.sheep import Sheep
 
-myManika = Cow('Манька', 500)
-print(myManika.say())
-print(myManika.weight)
-print(myManika.capacity)
-print(myManika.eat(22.7))
-print(myManika.weight)
-print(myManika.capacity)
-print(myManika.eat(22.7))
-print(myManika.weight)
-print(myManika.capacity)
+my_barashek = Sheep('Барашек', 100)
+my_kudryavyj = Sheep('Кудрявый', 80)
+my_manika = Cow('Манька', 400)
+print(my_manika.say())
+print(my_manika.weight)
+print(my_manika.capacity)
+print(my_manika.eat(22.7))
+print(my_manika.weight)
+print(my_manika.capacity)
+print(my_manika.eat(22.7))
+print(my_manika.weight)
+print(my_manika.capacity)
 
