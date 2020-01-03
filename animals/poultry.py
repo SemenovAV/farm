@@ -12,3 +12,8 @@ class Poultry(Animals):
         self.eggs = 0
         self.saturation = 0
         return result
+
+    def eat(self, food):
+        result = super().eat(food)
+        self.eggs += round((self.saturation / 90), 0)
+        return result
