@@ -10,7 +10,7 @@ class Dairy(Animals):
     def give_milk(self):
         milk = self.milk
         self.milk = 0
-        self.saturation -= self.saturation / 2
+        self.saturation = 0
         return milk
 
     def eat(self, food):

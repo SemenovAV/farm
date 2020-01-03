@@ -8,4 +8,7 @@ class Poultry(Animals):
         self.eggs = round((self.saturation / 90), 0)
 
     def lay_eggs(self):
-        return self.eggs
+        result = self.eggs
+        self.eggs = 0
+        self.saturation = 0
+        return result
