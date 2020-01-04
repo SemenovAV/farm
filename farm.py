@@ -5,13 +5,13 @@ from animals.ducks import Ducks
 from animals.sheep import Sheep
 from farmer import Farmer
 
-my_roga = Goats('Рога', 100)
-my_kopyta = Goats('Копыта', 80)
-my_manika = Cow('Манька', 400)
+my_roga = Goats('Рога', 102)
+my_kopyta = Goats('Копыта', 89)
+my_manika = Cow('Манька', 398)
 my_koko = Hens('Ко-ко', 2)
 my_kukareku = Hens('Кукареку', 1)
 my_kriakva = Ducks('Кряква', 2)
-my_barashek = Sheep('Барашек', 100)
+my_barashek = Sheep('Барашек', 106)
 my_kudriavyi = Sheep('Кудрявый', 100)
 
 my_farm = {my_roga, my_barashek, my_koko, my_kopyta, my_kriakva, my_kudriavyi, my_kukareku, my_manika}
@@ -31,7 +31,7 @@ all_animals_work = [
     },
     {
         'work': 'weigh_myself',
-        'report': 'взвесил',
+        'report': 'вес',
         'reason': 'weight',
         'unit': 'кг'
     }
@@ -90,3 +90,4 @@ my_farmer = Farmer(my_farm)
 
 my_farmer.work(instructions)
 my_farmer.print_report()
+print(my_farmer.get_heaviest())
