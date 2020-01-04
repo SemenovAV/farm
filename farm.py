@@ -3,6 +3,7 @@ from animals.goats import Goats
 from animals.hens import Hens
 from animals.ducks import Ducks
 from animals.sheep import Sheep
+from animals.geese import Geese
 from farmer import Farmer
 
 my_roga = Goats('Рога', 102)
@@ -13,8 +14,11 @@ my_kukareku = Hens('Кукареку', 1)
 my_kriakva = Ducks('Кряква', 2)
 my_barashek = Sheep('Барашек', 106)
 my_kudriavyi = Sheep('Кудрявый', 100)
+my_seryi = Geese('Серый', 3)
+my_belyi = Geese('Белый', 1)
 
-my_farm = {my_roga, my_barashek, my_koko, my_kopyta, my_kriakva, my_kudriavyi, my_kukareku, my_manika}
+my_farm = {my_roga, my_barashek, my_koko, my_kopyta, my_kriakva, my_kudriavyi, my_kukareku, my_manika, my_seryi,
+           my_belyi}
 
 all_animals_work = [
     {
@@ -83,7 +87,11 @@ instructions = [
     {
         'animal': Ducks,
         'works': all_animals_work + poultry_works
-    }
+    },
+    {
+        'animal': Geese,
+        'works': all_animals_work + poultry_works
+    },
 ]
 
 my_farmer = Farmer(my_farm)
