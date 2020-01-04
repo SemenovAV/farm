@@ -25,7 +25,7 @@ all_animals_work = [
     },
     {
         'work': 'eat',
-        'report': 'покормил',
+        'report': 'дал корма',
         'reason': 'hunger',
         'unit': 'кг'
     },
