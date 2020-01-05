@@ -1,9 +1,10 @@
 class Farmer:
     def __init__(self, farm):
-        self.farm = farm
         self.report = []
+        self.farm = farm
 
     def work(self, instructions):
+        self.report = []
         for item in instructions:
             for animal in list(filter(lambda elem: type(elem) == item['animal'], self.farm)):
                 i = 0
@@ -18,7 +19,7 @@ class Farmer:
                     if getattr(animal, work["reason"]):
                         result = getattr(animal, work['work'])()
                     else:
-                        result = 'Нет надобности.'
+                        result = 0
                     report['works'].append({tuple([work['work'], work['report'], work['unit']]): result})
                 self.report.append(report)
 
@@ -32,7 +33,10 @@ class Farmer:
                     if key[2]:
                         old_value = all_report.setdefault(key[1], [0, key[2]])[0]
                         all_report[key[1]][0] = round(old_value + value, 2)
-                    message += f'{key[1]}: {value} {key[2]}\n'
+                    if not value:
+                        message += f'{key[1]}: не требуется.\n'
+                    else:
+                        message += f'{key[1]}: {value} {key[2]}\n'
         message += f'\n Всего:\n'
         for key, value in all_report.items():
             message += f'{key}: {value[0]} {value[1]}\n'
